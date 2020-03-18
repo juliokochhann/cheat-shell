@@ -39,7 +39,7 @@ ________________________________________________________________________________
 
 - Change the owner of `bar/` and subfiles to "root"  
 `$ sudo chown -hR root bar/`
-> In this example *bar/* is a directory (-R = --recursive). But remember, in Linux everything is a FILE!
+> In this example `bar/` is a directory (-R = --recursive). But remember, in Linux everything is a FILE!
 
 ### Change file mode bits
 
@@ -48,6 +48,22 @@ ________________________________________________________________________________
 > A  combination  of the letters **ugoa** controls which users' access to the file will be changed
 >
 > The  letters  **rwxXst** select file mode bits for the affected users
+
+____________________________________________________________________________________________________
+
+## Nvidia
+
+### Update driver modules after kernel upgrade
+- Check the status of `dkms`  
+`$ dkms status`
+
+- Build the specified module/version for the specified kernel  
+`$ sudo dkms build nvidia/390.116 -k 5.3.0-42-generic`
+
+- Install module/version onto the kernel  
+`$ sudo dkms install nvidia/390.116 -k 5.3.0-42-generic`
+
+- Reboot
 
 ____________________________________________________________________________________________________
 
