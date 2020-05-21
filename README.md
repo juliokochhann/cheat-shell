@@ -2,6 +2,16 @@
 
 This is a cheat sheet of must-have linux commands.
 
+## Btrfs
+
+Use the btrfs command to manage and display information about a Btrfs file system. The command requires a subcommand. Enter `btrfs` without any arguments to list the subcommands
+
+### List Btrfs subvolumes
+-  List all subvolumes and snapshots in a btrfs filesystem  
+`$ sudo btrfs subvolume list -a /`
+
+____________________________________________________________________________________________________
+ 
 ## Create bootable USB drive
 
 1. Determine where the USB drive is mounted  
@@ -30,7 +40,7 @@ ________________________________________________________________________________
 
 ## Linux file permissions
 
-### Change the user and/or group ownership of each given file  
+### Change the user and/or group ownership of each given file
 - Change the owner of `/foo` to "root"  
 `$ sudo chown root /foo`
 
@@ -42,7 +52,6 @@ ________________________________________________________________________________
 > In this example `bar/` is a directory (-R = --recursive). But remember, in Linux everything is a FILE!
 
 ### Change file mode bits
-
 - Give the user who owns the file write access  
 `$ sudo chmod u+w foo.bar`
 > A  combination  of the letters **ugoa** controls which users' access to the file will be changed
@@ -69,6 +78,7 @@ ________________________________________________________________________________
 
 ## Tarballs
 
-- Extract/Uncompress tarball to specific directory  
+### Extract tarball
+- Extract tarball to specific directory  
 `$ tar -xvf file.tar.gz -C path/to/directory/`
 > GNU tar recognizes the compression method (gzip, bzip2, xz ...) by the file extension (tar.gz, tar.bz2, tar.xz ...)
